@@ -1,0 +1,14 @@
+apply plugin: 'java-library'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.12'
+}
+
+jar {
+    baseName = 'ad3-jni'
+    version = '0.1-SNAPSHOT'
+}
