@@ -8,7 +8,19 @@ dependencies {
     testImplementation 'junit:junit:4.12'
 }
 
+task generateJniHeaders(type:Exec) {
+    def classPath = sourceSets.main.output.classesDir
+    def nativeIncludeOutput = "src/main/cpp/include"
+
+    // Get classes automatically.
+    commandLine "javah", "-jni", "-d", nativeIncludeOutput, "-classpath", classPath, "edu.cmu.cs.ark.ad3.AD3Jni"
+
+    dependsOn classes
+}
+
 jar {
     baseName = 'ad3-jni'
     version = '0.1-SNAPSHOT'
+
+    dependsOn generateJniHeaders
 }
