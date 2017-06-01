@@ -10,12 +10,16 @@ dependencies {
 
 task generateJniHeaders(type:Exec) {
     def classPath = sourceSets.main.output.classesDir
-    def nativeIncludeOutput = "src/main/cpp/include"
+    def nativeIncludeOutput = "src/main/cpp"
 
     // Get classes automatically.
     commandLine "javah", "-jni", "-d", nativeIncludeOutput, "-classpath", classPath, "edu.cmu.cs.ark.ad3.AD3Jni"
 
     dependsOn classes
+}
+
+tasks.withType(Test) {
+    systemProperty 'java.library.path', '../build/jni'
 }
 
 jar {
