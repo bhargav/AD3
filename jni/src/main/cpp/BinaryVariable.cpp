@@ -8,8 +8,8 @@
  */
 JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable
   (JNIEnv *env, jclass cls) {
-    AD3::BinaryVariable variable;
-    return reinterpret_cast<jlong>(&variable);
+    AD3::BinaryVariable *variable = new AD3::BinaryVariable();
+    return reinterpret_cast<jlong>(variable);
   }
 
 /*

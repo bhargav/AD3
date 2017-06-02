@@ -1,19 +1,35 @@
 package edu.cmu.cs.ark.ad3;
 
 public final class MultiVariable {
+    private AD3CObj nativeObj = null;
+
+    MultiVariable(long cPtr) {
+        this.nativeObj = new AD3CObj(cPtr, 1);
+    }
+
+    public MultiVariable() {
+        long nativeHandler = AD3Jni.MultiVariable();
+        this.nativeObj = new AD3CObj(nativeHandler, 1);
+    }
+
     public int GetNumStates() {
-        return 0;
+        return AD3Jni.MultiVariable_GetNumStates(this.nativeObj.get());
     }
 
     public BinaryVariable GetState(int i) {
-        return null;
+        long bvPtr = AD3Jni.MultiVariable_GetState(this.nativeObj.get(), i);
+        return new BinaryVariable(bvPtr);
     }
 
     public double GetLogPotential(int i) {
-        return 0.0;
+        return AD3Jni.MultiVariable_GetLogPotential(this.nativeObj.get(), i);
     }
 
     public void SetLogPotential(int i, double logPotential) {
+        AD3Jni.MultiVariable_SetLogPotential(this.nativeObj.get(), i, logPotential);
+    }
 
+    public long getNativeHandle() {
+        return this.nativeObj.get();
     }
 }

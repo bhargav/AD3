@@ -1,25 +1,38 @@
 package edu.cmu.cs.ark.ad3;
 
 public final class Factor {
+    private AD3CObj nativeObj = null;
+
+    Factor(long cPtr) {
+        this.nativeObj = new AD3CObj(cPtr, 1);
+    }
+
     public double[] GetAdditionalLogPotentials() {
-        return new double[]{};
+        return AD3Jni.Factor_GetAdditionalLogPotentials(this.nativeObj.get());
     }
 
     public void SetAdditionalLogPotentials(double[] additionalLogPotentials) {
+        AD3Jni.Factor_SetAdditionalLogPotentials(this.nativeObj.get(), additionalLogPotentials);
     }
 
     public int Degree() {
-        return 0;
+        return AD3Jni.Factor_Degree(this.nativeObj.get());
     }
 
     public int GetLinkId(int i) {
-        return 0;
+        return AD3Jni.Factor_GetLinkId(this.nativeObj.get(), i);
     }
 
     public BinaryVariable GetVariable(int i) {
-        return null;
+        long bvPtr = AD3Jni.Factor_GetVariable(this.nativeObj.get(), i);
+        return new BinaryVariable(bvPtr);
     }
 
-    public void SolveMap(double[] variableLogPotentials, double[] additionalLogPotentials, double[] variablePosteriors /* return value */, double[] additionalPosteriors /* return value */, double value /* return value */) {
+    public MAPResult SolveMAP(double[] variableLogPotentials, double[] additionalLogPotentials) {
+        return AD3Jni.Factor_SolveMAP(this.nativeObj.get(), variableLogPotentials, additionalLogPotentials);
+    }
+
+    public long getNativeHandle() {
+        return this.nativeObj.get();
     }
 }

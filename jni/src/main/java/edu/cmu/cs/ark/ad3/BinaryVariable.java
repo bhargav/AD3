@@ -1,9 +1,9 @@
 package edu.cmu.cs.ark.ad3;
 
 public final class BinaryVariable {
-    public AD3CObj nativeObj = null;
+    private AD3CObj nativeObj = null;
 
-    private BinaryVariable(long cPtr) {
+    BinaryVariable(long cPtr) {
         this.nativeObj = new AD3CObj(cPtr, 1);
     }
 
@@ -26,5 +26,9 @@ public final class BinaryVariable {
 
     public int Degree() {
         return AD3Jni.BinaryVariable_Degree(this.nativeObj.get());
+    }
+
+    public long getNativeHandle() {
+        return this.nativeObj.get();
     }
 }

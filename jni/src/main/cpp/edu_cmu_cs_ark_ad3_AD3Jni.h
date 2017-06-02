@@ -47,6 +47,318 @@ JNIEXPORT jint JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable_1GetId
 JNIEXPORT jint JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable_1Degree
   (JNIEnv *, jclass, jlong);
 
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    MultiVariable
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    MultiVariable_GetNumStates
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable_1GetNumStates
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    MultiVariable_GetState
+ * Signature: (JI)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable_1GetState
+  (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    MultiVariable_GetLogPotential
+ * Signature: (JI)D
+ */
+JNIEXPORT jdouble JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable_1GetLogPotential
+  (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    MultiVariable_SetLogPotential
+ * Signature: (JID)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable_1SetLogPotential
+  (JNIEnv *, jclass, jlong, jint, jdouble);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    Factor_GetAdditionalLogPotentials
+ * Signature: (J)[D
+ */
+JNIEXPORT jdoubleArray JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_Factor_1GetAdditionalLogPotentials
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    Factor_SetAdditionalLogPotentials
+ * Signature: (J[D)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_Factor_1SetAdditionalLogPotentials
+  (JNIEnv *, jclass, jlong, jdoubleArray);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    Factor_Degree
+ * Signature: (J)I
+ */
+JNIEXPORT jint JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_Factor_1Degree
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    Factor_GetLinkId
+ * Signature: (JI)I
+ */
+JNIEXPORT jint JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_Factor_1GetLinkId
+  (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    Factor_GetVariable
+ * Signature: (JI)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_Factor_1GetVariable
+  (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    Factor_SolveMAP
+ * Signature: (J[D[D)Ledu/cmu/cs/ark/ad3/MAPResult;
+ */
+JNIEXPORT jobject JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_Factor_1SolveMAP
+  (JNIEnv *, jclass, jlong, jdoubleArray, jdoubleArray);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph
+ * Signature: ()J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_SetVerbosity
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SetVerbosity
+  (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_SetEtaPSDD
+ * Signature: (JD)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SetEtaPSDD
+  (JNIEnv *, jclass, jlong, jdouble);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_SetMaxIterationsPSDD
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SetMaxIterationsPSDD
+  (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_SolveLPMAPWithPSDD
+ * Signature: (J)Ledu/cmu/cs/ark/ad3/MAPResult;
+ */
+JNIEXPORT jobject JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SolveLPMAPWithPSDD
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_SetEtaAD3
+ * Signature: (JD)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SetEtaAD3
+  (JNIEnv *, jclass, jlong, jdouble);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_AdaptEtaAD3
+ * Signature: (JZ)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1AdaptEtaAD3
+  (JNIEnv *, jclass, jlong, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_SetMaxIterationsAD3
+ * Signature: (JI)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SetMaxIterationsAD3
+  (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_FixMultiVariablesWithoutFactors
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1FixMultiVariablesWithoutFactors
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_SolveLPMAPWithAD3
+ * Signature: (J)Ledu/cmu/cs/ark/ad3/MAPResult;
+ */
+JNIEXPORT jobject JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SolveLPMAPWithAD3
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_SolveExactMAPWithAD3
+ * Signature: (J)Ledu/cmu/cs/ark/ad3/MAPResult;
+ */
+JNIEXPORT jobject JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SolveExactMAPWithAD3
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_GetDualVariables
+ * Signature: (J)[D
+ */
+JNIEXPORT jdoubleArray JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1GetDualVariables
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_GetLocalPrimalVariables
+ * Signature: (J)[D
+ */
+JNIEXPORT jdoubleArray JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1GetLocalPrimalVariables
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_GetGlobalPrimalVariables
+ * Signature: (J)[D
+ */
+JNIEXPORT jdoubleArray JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1GetGlobalPrimalVariables
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateBinaryVariable
+ * Signature: (J)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateBinaryVariable
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateMultiVariable
+ * Signature: (JI)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateMultiVariable
+  (JNIEnv *, jclass, jlong, jint);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorDense
+ * Signature: (J[J[DZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorDense
+  (JNIEnv *, jclass, jlong, jlongArray, jdoubleArray, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorXOR
+ * Signature: (J[J[ZZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorXOR
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorXOROUT
+ * Signature: (J[J[ZZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorXOROUT
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorAtMostOne
+ * Signature: (J[J[ZZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorAtMostOne
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorOR
+ * Signature: (J[J[ZZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorOR
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorOROUT
+ * Signature: (J[J[ZZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorOROUT
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorANDOUT
+ * Signature: (J[J[ZZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorANDOUT
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorIMPLY
+ * Signature: (J[J[ZZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorIMPLY
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorPAIR
+ * Signature: (J[JDZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorPAIR
+  (JNIEnv *, jclass, jlong, jlongArray, jdouble, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorBUDGET
+ * Signature: (J[J[ZIZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorBUDGET
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jint, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_CreateFactorKNAPSACK
+ * Signature: (J[J[Z[DDZ)J
+ */
+JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactorKNAPSACK
+  (JNIEnv *, jclass, jlong, jlongArray, jbooleanArray, jdoubleArray, jdouble, jboolean);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_DeclareFactor
+ * Signature: (JJ[JZ)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1DeclareFactor
+  (JNIEnv *, jclass, jlong, jlong, jlongArray, jboolean);
+
 #ifdef __cplusplus
 }
 #endif
