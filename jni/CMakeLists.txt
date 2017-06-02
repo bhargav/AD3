@@ -12,8 +12,7 @@ set(AD3_JNI_SOURCES src/main/cpp/BinaryVariable.cpp
     src/main/cpp/FactorGraph.cpp
     src/main/cpp/Utils.cpp)
 
-add_library(AD3Jni20 MODULE ${AD3_JNI_SOURCES})
-set_target_properties(AD3Jni20 PROPERTIES SUFFIX ".jnilib")
+add_library(AD3Jni20 SHARED ${AD3_JNI_SOURCES})
 target_link_libraries(AD3Jni20 ${JNI_LIBRARIES} ad3)
 
 if(${UNIX})

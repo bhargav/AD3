@@ -5,6 +5,7 @@ file(GLOB libAD3_SOURCES *.cpp)
 file(GLOB libAD3_HEADERS *.h)
 
 set(EIGEN3_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/../Eigen)
+set(EIGEN3_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/..)
 set(CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/../cmake)
 find_package(Eigen3 REQUIRED)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/../Eigen)
