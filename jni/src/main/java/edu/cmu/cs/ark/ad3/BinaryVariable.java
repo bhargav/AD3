@@ -4,12 +4,12 @@ public final class BinaryVariable {
     private AD3CObj nativeObj = null;
 
     BinaryVariable(long cPtr) {
-        this.nativeObj = new AD3CObj(cPtr, 1);
+        this.nativeObj = new AD3CObj(cPtr, AD3CObjType.NATIVE);
     }
 
     public BinaryVariable() {
         long nativeHandler = AD3Jni.BinaryVariable();
-        this.nativeObj = new AD3CObj(nativeHandler, 1);
+        this.nativeObj = new AD3CObj(nativeHandler, AD3CObjType.MANAGED);
     }
 
     public double GetLogPotential() {

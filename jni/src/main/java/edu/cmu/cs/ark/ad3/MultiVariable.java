@@ -4,12 +4,12 @@ public final class MultiVariable {
     private AD3CObj nativeObj = null;
 
     MultiVariable(long cPtr) {
-        this.nativeObj = new AD3CObj(cPtr, 1);
+        this.nativeObj = new AD3CObj(cPtr, AD3CObjType.NATIVE);
     }
 
     public MultiVariable() {
         long nativeHandler = AD3Jni.MultiVariable();
-        this.nativeObj = new AD3CObj(nativeHandler, 1);
+        this.nativeObj = new AD3CObj(nativeHandler, AD3CObjType.MANAGED);
     }
 
     public int GetNumStates() {

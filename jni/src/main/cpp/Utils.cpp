@@ -9,14 +9,14 @@ namespace Utils {
 
     std::vector<double> convertToDoubleVector(JNIEnv *env, jdoubleArray inputArray) {
         jsize size = env->GetArrayLength(inputArray);
-        std::vector<double> outputVector(size);
+        std::vector<double> outputVector;
         env->GetDoubleArrayRegion(inputArray, 0, size, &outputVector[0]);
         return outputVector;
     }
 
     std::vector<bool> convertToBoolVector(JNIEnv *env, jbooleanArray inputArray) {
         jsize size = env->GetArrayLength(inputArray);
-        std::vector<bool> outputVector(size);
+        std::vector<bool> outputVector;
 
         jboolean *body = env->GetBooleanArrayElements(inputArray, 0);
         for (int i=0; i<size; i++) {

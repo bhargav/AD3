@@ -4,7 +4,7 @@ public final class Factor {
     private AD3CObj nativeObj = null;
 
     Factor(long cPtr) {
-        this.nativeObj = new AD3CObj(cPtr, 1);
+        this.nativeObj = new AD3CObj(cPtr, AD3CObjType.NATIVE);
     }
 
     public double[] GetAdditionalLogPotentials() {

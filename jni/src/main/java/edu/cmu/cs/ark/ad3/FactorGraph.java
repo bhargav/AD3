@@ -4,12 +4,12 @@ public class FactorGraph {
     private AD3CObj nativeObj = null;
 
     FactorGraph(long cPtr) {
-        this.nativeObj = new AD3CObj(cPtr, 1);
+        this.nativeObj = new AD3CObj(cPtr, AD3CObjType.NATIVE);
     }
 
     public FactorGraph() {
         long nativeHandle = AD3Jni.FactorGraph();
-        this.nativeObj = new AD3CObj(nativeHandle, 1);
+        this.nativeObj = new AD3CObj(nativeHandle, AD3CObjType.MANAGED);
     }
 
     public void SetVerbosity(int verbosity) {

@@ -215,7 +215,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(multi_variable_handles);
-    std::vector<AD3::MultiVariable*> multi_variables(size);
+    std::vector<AD3::MultiVariable*> multi_variables;
 
     jlong *body = env->GetLongArrayElements(multi_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -239,7 +239,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -263,7 +263,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -287,7 +287,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -311,7 +311,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -335,7 +335,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -359,7 +359,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -383,7 +383,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -407,7 +407,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -430,7 +430,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -454,7 +454,7 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1CreateFactor
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
@@ -480,7 +480,7 @@ JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1DeclareFactor
     AD3::Factor *factor = reinterpret_cast<AD3::Factor *>(factorHandle);
 
     jsize size = env->GetArrayLength(binary_variable_handles);
-    std::vector<AD3::BinaryVariable*> binary_variables(size);
+    std::vector<AD3::BinaryVariable*> binary_variables;
 
     jlong *body = env->GetLongArrayElements(binary_variable_handles, 0);
     for (int i = 0; i < size; i++) {
