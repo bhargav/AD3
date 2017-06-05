@@ -1,4 +1,5 @@
 apply plugin: 'java-library'
+apply plugin: 'maven-publish'
 
 repositories {
     jcenter()
@@ -22,9 +23,20 @@ tasks.withType(Test) {
     systemProperty 'java.library.path', '../build/jni'
 }
 
+version = '2.0.1-SNAPSHOT'
+
 jar {
     baseName = 'ad3-jni'
-    version = '0.1-SNAPSHOT'
-
     dependsOn generateJniHeaders
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+
+            artifactId = 'ad3-jni'
+            groupId = 'edu.cmu.cs.ark'
+        }
+    }
 }
