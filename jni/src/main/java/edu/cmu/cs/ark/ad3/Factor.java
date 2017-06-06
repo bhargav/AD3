@@ -7,28 +7,28 @@ public final class Factor {
         this.nativeObj = new AD3CObj(cPtr, AD3CObjType.NATIVE);
     }
 
-    public double[] GetAdditionalLogPotentials() {
+    public double[] getAdditionalLogPotentials() {
         return AD3Jni.Factor_GetAdditionalLogPotentials(this.nativeObj.get());
     }
 
-    public void SetAdditionalLogPotentials(double[] additionalLogPotentials) {
+    public void setAdditionalLogPotentials(double[] additionalLogPotentials) {
         AD3Jni.Factor_SetAdditionalLogPotentials(this.nativeObj.get(), additionalLogPotentials);
     }
 
-    public int Degree() {
+    public int getDegree() {
         return AD3Jni.Factor_Degree(this.nativeObj.get());
     }
 
-    public int GetLinkId(int i) {
+    public int getLinkId(int i) {
         return AD3Jni.Factor_GetLinkId(this.nativeObj.get(), i);
     }
 
-    public BinaryVariable GetVariable(int i) {
+    public BinaryVariable getVariable(int i) {
         long bvPtr = AD3Jni.Factor_GetVariable(this.nativeObj.get(), i);
         return new BinaryVariable(bvPtr);
     }
 
-    public MAPResult SolveMAP(double[] variableLogPotentials, double[] additionalLogPotentials) {
+    public MAPResult solveMAP(double[] variableLogPotentials, double[] additionalLogPotentials) {
         return AD3Jni.Factor_SolveMAP(this.nativeObj.get(), variableLogPotentials, additionalLogPotentials);
     }
 

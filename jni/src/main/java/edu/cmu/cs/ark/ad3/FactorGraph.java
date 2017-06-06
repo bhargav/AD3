@@ -12,69 +12,69 @@ public class FactorGraph {
         this.nativeObj = new AD3CObj(nativeHandle, AD3CObjType.MANAGED);
     }
 
-    public void SetVerbosity(int verbosity) {
+    public void setVerbosity(int verbosity) {
         AD3Jni.FactorGraph_SetVerbosity(this.nativeObj.get(), verbosity);
     }
 
-    public void SetEtaPSDD(double eta) {
+    public void setEtaPSDD(double eta) {
         AD3Jni.FactorGraph_SetEtaPSDD(this.nativeObj.get(), eta);
     }
 
-    public void SetMaxIterationsPSDD(int max_iterations) {
+    public void setMaxIterationsPSDD(int max_iterations) {
         AD3Jni.FactorGraph_SetMaxIterationsPSDD(this.nativeObj.get(), max_iterations);
     }
 
-    public MAPResult SolveLPMAPWithPSDD() {
+    public MAPResult solveLPMAPWithPSDD() {
         return AD3Jni.FactorGraph_SolveLPMAPWithPSDD(this.nativeObj.get());
     }
 
-    public void SetEtaAD3(double eta) {
+    public void setEtaAD3(double eta) {
         AD3Jni.FactorGraph_SetEtaAD3(this.nativeObj.get(), eta);
     }
 
-    public void AdaptEtaAD3(boolean adapt) {
+    public void adaptEtaAD3(boolean adapt) {
         AD3Jni.FactorGraph_AdaptEtaAD3(this.nativeObj.get(), adapt);
     }
 
-    public void SetMaxIterationsAD3(int max_iterations) {
+    public void setMaxIterationsAD3(int max_iterations) {
         AD3Jni.FactorGraph_SetMaxIterationsAD3(this.nativeObj.get(), max_iterations);
     }
 
-    public void FixMultiVariablesWithoutFactors() {
+    public void fixMultiVariablesWithoutFactors() {
         AD3Jni.FactorGraph_FixMultiVariablesWithoutFactors(this.nativeObj.get());
     }
 
-    public MAPResult SolveLPMAPWithAD3() {
+    public MAPResult solveLPMAPWithAD3() {
         return AD3Jni.FactorGraph_SolveLPMAPWithAD3(this.nativeObj.get());
     }
 
-    public MAPResult SolveExactMAPWithAD3() {
+    public MAPResult solveExactMAPWithAD3() {
         return AD3Jni.FactorGraph_SolveExactMAPWithAD3(this.nativeObj.get());
     }
 
-    public double[] GetDualVariables() {
+    public double[] getDualVariables() {
         return AD3Jni.FactorGraph_GetDualVariables(this.nativeObj.get());
     }
 
-    public double[] GetLocalPrimalVariables() {
+    public double[] getLocalPrimalVariables() {
         return AD3Jni.FactorGraph_GetLocalPrimalVariables(this.nativeObj.get());
     }
 
-    public double[] GetGlobalPrimalVariables() {
+    public double[] getGlobalPrimalVariables() {
         return AD3Jni.FactorGraph_GetGlobalPrimalVariables(this.nativeObj.get());
     }
 
-    public BinaryVariable CreateBinaryVariable() {
+    public BinaryVariable createBinaryVariable() {
         long bvPtr = AD3Jni.FactorGraph_CreateBinaryVariable(this.nativeObj.get());
         return new BinaryVariable(bvPtr);
     }
 
-    public MultiVariable CreateMultiVariable(int num_states) {
+    public MultiVariable createMultiVariable(int num_states) {
         long mvPtr = AD3Jni.FactorGraph_CreateMultiVariable(this.nativeObj.get(), num_states);
         return new MultiVariable(mvPtr);
     }
 
-    public Factor CreateFactorDense(MultiVariable[] multi_variables,
+    public Factor createFactorDense(MultiVariable[] multi_variables,
                                     double[] additional_log_potentials,
                                     boolean owned_by_graph) {
         long[] multiVariableHandles = new long[multi_variables.length];
@@ -86,7 +86,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorXOR(BinaryVariable[] binaryVariables,
+    public Factor createFactorXOR(BinaryVariable[] binaryVariables,
                                   boolean[] negated,
                                   boolean owned_by_graph) {
         long[] binaryVariableHandles = new long[binaryVariables.length];
@@ -98,7 +98,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorXOROUT(BinaryVariable[] binaryVariables,
+    public Factor createFactorXOROUT(BinaryVariable[] binaryVariables,
                                      boolean[] negated,
                                      boolean owned_by_graph) {
         long[] binaryVariableHandles = new long[binaryVariables.length];
@@ -110,7 +110,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorAtMostOne(BinaryVariable[] binaryVariables,
+    public Factor createFactorAtMostOne(BinaryVariable[] binaryVariables,
                                         boolean[] negated,
                                         boolean owned_by_graph) {
         long[] binaryVariableHandles = new long[binaryVariables.length];
@@ -122,7 +122,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorOR(BinaryVariable[] binaryVariables,
+    public Factor createFactorOR(BinaryVariable[] binaryVariables,
                                  boolean[] negated,
                                  boolean owned_by_graph) {
         long[] binaryVariableHandles = new long[binaryVariables.length];
@@ -134,7 +134,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorOROUT(BinaryVariable[] binaryVariables,
+    public Factor createFactorOROUT(BinaryVariable[] binaryVariables,
                                     boolean[] negated,
                                     boolean owned_by_graph) {
         long[] binaryVariableHandles = new long[binaryVariables.length];
@@ -146,7 +146,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorANDOUT(BinaryVariable[] binaryVariables,
+    public Factor createFactorANDOUT(BinaryVariable[] binaryVariables,
                                      boolean[] negated,
                                      boolean owned_by_graph) {
         long[] binaryVariableHandles = new long[binaryVariables.length];
@@ -158,7 +158,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorIMPLY(BinaryVariable[] binaryVariables,
+    public Factor createFactorIMPLY(BinaryVariable[] binaryVariables,
                                     boolean[] negated,
                                     boolean owned_by_graph) {
         long[] binaryVariableHandles = new long[binaryVariables.length];
@@ -170,7 +170,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorPAIR(BinaryVariable[] binaryVariables,
+    public Factor createFactorPAIR(BinaryVariable[] binaryVariables,
                                    double edge_log_potential,
                                    boolean owned_by_graph) {
         long[] binaryVariableHandles = new long[binaryVariables.length];
@@ -182,7 +182,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorBUDGET(BinaryVariable[] binaryVariables,
+    public Factor createFactorBUDGET(BinaryVariable[] binaryVariables,
                                      boolean[] negated,
                                      int budget,
                                      boolean owned_by_graph) {
@@ -195,7 +195,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public Factor CreateFactorKNAPSACK(BinaryVariable[] binaryVariables,
+    public Factor createFactorKNAPSACK(BinaryVariable[] binaryVariables,
                                        boolean[] negated,
                                        double[] costs,
                                        double budget,
@@ -209,7 +209,7 @@ public class FactorGraph {
         return new Factor(fPtr);
     }
 
-    public void DeclareFactor(Factor factor,
+    public void declareFactor(Factor factor,
                               BinaryVariable[] binaryVariables,
                               boolean owned_by_graph) {
         long factorHandle = factor.getNativeHandle();

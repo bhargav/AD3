@@ -1,6 +1,6 @@
 package edu.cmu.cs.ark.ad3;
 
-public class AD3Jni {
+final class AD3Jni {
     static {
         System.loadLibrary("AD3Jni20");
     }

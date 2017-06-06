@@ -8,7 +8,7 @@ public class MultiVariableTest {
     @Test
     public void testCreateNewInstance() {
         MultiVariable variable = new MultiVariable();
-        assertEquals(variable.GetNumStates(), 0);
+        assertEquals(variable.getNumStates(), 0);
     }
 
 }

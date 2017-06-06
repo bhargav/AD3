@@ -12,20 +12,20 @@ public final class MultiVariable {
         this.nativeObj = new AD3CObj(nativeHandler, AD3CObjType.MANAGED);
     }
 
-    public int GetNumStates() {
+    public int getNumStates() {
         return AD3Jni.MultiVariable_GetNumStates(this.nativeObj.get());
     }
 
-    public BinaryVariable GetState(int i) {
+    public BinaryVariable getState(int i) {
         long bvPtr = AD3Jni.MultiVariable_GetState(this.nativeObj.get(), i);
         return new BinaryVariable(bvPtr);
     }
 
-    public double GetLogPotential(int i) {
+    public double getLogPotential(int i) {
         return AD3Jni.MultiVariable_GetLogPotential(this.nativeObj.get(), i);
     }
 
-    public void SetLogPotential(int i, double logPotential) {
+    public void setLogPotential(int i, double logPotential) {
         AD3Jni.MultiVariable_SetLogPotential(this.nativeObj.get(), i, logPotential);
     }
 

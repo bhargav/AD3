@@ -12,19 +12,19 @@ public final class BinaryVariable {
         this.nativeObj = new AD3CObj(nativeHandler, AD3CObjType.MANAGED);
     }
 
-    public double GetLogPotential() {
+    public double getLogPotential() {
         return AD3Jni.BinaryVariable_GetLogPotential(this.nativeObj.get());
     }
 
-    public void SetLogPotential(double logPotential) {
+    public void setLogPotential(double logPotential) {
         AD3Jni.BinaryVariable_SetLogPotential(this.nativeObj.get(), logPotential);
     }
 
-    public int GetId() {
+    public int getId() {
         return AD3Jni.BinaryVariable_GetId(this.nativeObj.get());
     }
 
-    public int Degree() {
+    public int getDegree() {
         return AD3Jni.BinaryVariable_Degree(this.nativeObj.get());
     }
 
