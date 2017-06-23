@@ -223,10 +223,10 @@ public class FactorGraph {
 
     @Override
     protected void finalize() throws Throwable {
-        super.finalize();
-
         if (this.nativeObj.getType() == AD3CObjType.MANAGED) {
-            AD3Jni.FactorGraph_FreePtr(this.nativeObj.get());
+            AD3Jni.FactorGraph_Dispose(this.nativeObj.get());
         }
+
+        super.finalize();
     }
 }

@@ -17,10 +17,10 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
- * Method:    BinaryVariable_FreePtr
+ * Method:    BinaryVariable_Dispose
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable_1FreePtr
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable_1Dispose
   (JNIEnv *, jclass, jlong);
 
 /*
@@ -65,10 +65,10 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
- * Method:    MultiVariable_FreePtr
+ * Method:    MultiVariable_Dispose
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable_1FreePtr
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable_1Dispose
   (JNIEnv *, jclass, jlong);
 
 /*
@@ -161,10 +161,10 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
- * Method:    FactorGraph_FreePtr
+ * Method:    FactorGraph_Dispose
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1FreePtr
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1Dispose
   (JNIEnv *, jclass, jlong);
 
 /*

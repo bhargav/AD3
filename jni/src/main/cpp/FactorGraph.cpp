@@ -17,10 +17,10 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
- * Method:    FactorGraph_FreePtr
+ * Method:    FactorGraph_Dispose
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1FreePtr
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1Dispose
         (JNIEnv *env, jclass cls, jlong handle) {
     AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
     delete fg;

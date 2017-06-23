@@ -35,10 +35,10 @@ public final class MultiVariable {
 
     @Override
     protected void finalize() throws Throwable {
-        super.finalize();
-
         if (this.nativeObj.getType() == AD3CObjType.MANAGED) {
-            AD3Jni.MultiVariable_FreePtr(this.nativeObj.get());
+            AD3Jni.MultiVariable_Dispose(this.nativeObj.get());
         }
+
+        super.finalize();
     }
 }

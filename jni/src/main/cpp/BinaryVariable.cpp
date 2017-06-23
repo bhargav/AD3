@@ -14,10 +14,10 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
- * Method:    BinaryVariable_FreePtr
+ * Method:    BinaryVariable_Dispose
  * Signature: (J)V
  */
-JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable_1FreePtr
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable_1Dispose
         (JNIEnv *env, jclass cls, jlong handle) {
     AD3::BinaryVariable *b = reinterpret_cast<AD3::BinaryVariable *>(handle);
     delete b;
