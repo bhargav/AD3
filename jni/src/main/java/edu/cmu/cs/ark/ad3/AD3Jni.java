@@ -1,8 +1,30 @@
 package edu.cmu.cs.ark.ad3;
 
+import org.scijava.nativelib.NativeLoader;
+
+import java.io.IOException;
+
 final class AD3Jni {
+    private static final String nativeLibraryName = "AD3Jni20";
+
     static {
-        System.loadLibrary("AD3Jni20");
+        boolean loadFromLibraryPath = false;
+
+        try {
+            System.loadLibrary(nativeLibraryName);
+            loadFromLibraryPath = true;
+        } catch (UnsatisfiedLinkError err) {
+            // XXX - Log this.
+        }
+
+        if (!loadFromLibraryPath) {
+            // Try to load from classpath or JAR file as an alternative
+            try {
+                NativeLoader.loadLibrary(nativeLibraryName);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     // Binary Variable Methods
