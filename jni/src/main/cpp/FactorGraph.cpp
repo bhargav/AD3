@@ -17,6 +17,17 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_FreePtr
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1FreePtr
+        (JNIEnv *env, jclass cls, jlong handle) {
+    AD3::FactorGraph *fg = reinterpret_cast<AD3::FactorGraph *>(handle);
+    delete fg;
+}
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
  * Method:    FactorGraph_SetVerbosity
  * Signature: (JI)V
  */
@@ -138,8 +149,6 @@ JNIEXPORT jobject JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1SolveExact
     int status = f->SolveExactMAPWithAD3(&variable_posteriors, &additional_posteriors, &value);
 
     return Utils::createMAPResultWithStatus(env, variable_posteriors, additional_posteriors, value, status);
-
-
   }
 
 /*

@@ -31,6 +31,8 @@ final class AD3Jni {
 
     public static native long BinaryVariable();
 
+    public static native void BinaryVariable_FreePtr(long cPtr);
+
     public static native double BinaryVariable_GetLogPotential(long cPtr);
 
     public static native void BinaryVariable_SetLogPotential(long cPtr, double logPotential);
@@ -42,6 +44,8 @@ final class AD3Jni {
     // Multi Variable Methods
 
     public static native long MultiVariable();
+
+    public static native void MultiVariable_FreePtr(long cPtr);
 
     public static native int MultiVariable_GetNumStates(long cPtr);
 
@@ -68,6 +72,8 @@ final class AD3Jni {
     // Factor Graph Methods
 
     public static native long FactorGraph();
+
+    public static native void FactorGraph_FreePtr(long cPtr);
 
     public static native void FactorGraph_SetVerbosity(long cPtr, int verbosity);
 

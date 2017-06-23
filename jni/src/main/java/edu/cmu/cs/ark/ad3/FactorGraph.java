@@ -220,4 +220,13 @@ public class FactorGraph {
 
         AD3Jni.FactorGraph_DeclareFactor(this.nativeObj.get(), factorHandle, binaryVariableHandles, owned_by_graph);
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+
+        if (this.nativeObj.getType() == AD3CObjType.MANAGED) {
+            AD3Jni.FactorGraph_FreePtr(this.nativeObj.get());
+        }
+    }
 }

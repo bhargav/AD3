@@ -31,4 +31,13 @@ public final class BinaryVariable {
     public long getNativeHandle() {
         return this.nativeObj.get();
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+
+        if (this.nativeObj.getType() == AD3CObjType.MANAGED) {
+            AD3Jni.BinaryVariable_FreePtr(this.nativeObj.get());
+        }
+    }
 }

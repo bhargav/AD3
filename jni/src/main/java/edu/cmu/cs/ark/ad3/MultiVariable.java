@@ -32,4 +32,13 @@ public final class MultiVariable {
     public long getNativeHandle() {
         return this.nativeObj.get();
     }
+
+    @Override
+    protected void finalize() throws Throwable {
+        super.finalize();
+
+        if (this.nativeObj.getType() == AD3CObjType.MANAGED) {
+            AD3Jni.MultiVariable_FreePtr(this.nativeObj.get());
+        }
+    }
 }

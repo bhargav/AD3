@@ -14,6 +14,17 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    MultiVariable_FreePtr
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable_1FreePtr
+        (JNIEnv *env, jclass cls, jlong handle) {
+    AD3::MultiVariable *m = reinterpret_cast<AD3::MultiVariable *>(handle);
+    delete m;
+}
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
  * Method:    MultiVariable_GetNumStates
  * Signature: (J)I
  */

@@ -17,6 +17,14 @@ JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    BinaryVariable_FreePtr
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable_1FreePtr
+  (JNIEnv *, jclass, jlong);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
  * Method:    BinaryVariable_GetLogPotential
  * Signature: (J)D
  */
@@ -54,6 +62,14 @@ JNIEXPORT jint JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_BinaryVariable_1Degree
  */
 JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable
   (JNIEnv *, jclass);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    MultiVariable_FreePtr
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_MultiVariable_1FreePtr
+  (JNIEnv *, jclass, jlong);
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni
@@ -142,6 +158,14 @@ JNIEXPORT jobject JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_Factor_1SolveMAP
  */
 JNIEXPORT jlong JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph
   (JNIEnv *, jclass);
+
+/*
+ * Class:     edu_cmu_cs_ark_ad3_AD3Jni
+ * Method:    FactorGraph_FreePtr
+ * Signature: (J)V
+ */
+JNIEXPORT void JNICALL Java_edu_cmu_cs_ark_ad3_AD3Jni_FactorGraph_1FreePtr
+  (JNIEnv *, jclass, jlong);
 
 /*
  * Class:     edu_cmu_cs_ark_ad3_AD3Jni

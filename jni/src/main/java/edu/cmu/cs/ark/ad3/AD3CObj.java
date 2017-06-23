@@ -18,12 +18,7 @@ class AD3CObj {
         return this.cptr;
     }
 
-    public void dispose() {
-        // Implement this.
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        dispose();
+    int getType() {
+        return this.type;
     }
 }
