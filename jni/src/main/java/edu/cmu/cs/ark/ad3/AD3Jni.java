@@ -1,8 +1,6 @@
 package edu.cmu.cs.ark.ad3;
 
-import org.scijava.nativelib.NativeLoader;
-
-import java.io.IOException;
+import org.scijava.nativelib.NativeLibraryUtil;
 
 final class AD3Jni {
     private static final String nativeLibraryName = "AD3Jni20";
@@ -19,11 +17,7 @@ final class AD3Jni {
 
         if (!loadFromLibraryPath) {
             // Try to load from classpath or JAR file as an alternative
-            try {
-                NativeLoader.loadLibrary(nativeLibraryName);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+            NativeLibraryUtil.loadNativeLibrary(AD3Jni.class, nativeLibraryName);
         }
     }
 
